@@ -24,6 +24,9 @@ export default {
  			let res = data.body;
  			let tsDate = [];
  			for (var i = 0; i < res.scheduleItems.length; i++) {
+ 				if (res.scheduleItems[i].tournament != '6e66df3c-1c99-46af-8903-51c562ca2a08') {
+ 					continue
+ 				}
  				//获取每场match的信息
  				let match = { 
  					match : res.scheduleItems[i].match,
