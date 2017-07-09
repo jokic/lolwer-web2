@@ -92,7 +92,7 @@ export default {
  						tsDate[i].game = game;
  						tsDate[i].closed = closed;
  						tsDate[i].teams = teams;
- 						tsDate[i].type="洲际系列赛";
+ 						tsDate[i].type="韩国LCK联赛";
  						break
  					}
  				}

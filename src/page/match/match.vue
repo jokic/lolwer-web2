@@ -1,7 +1,7 @@
 <template>
   <div>	
   	<div class="list">	
-	  	<router-link to="/match/all">ALL</router-link>
+	  	<router-link to="/match/all">RIFT</router-link>
 	  	<router-link to="/match/lpl">LPL</router-link>
 	  	<router-link to="/match/lck">LCK</router-link>
   	</div>

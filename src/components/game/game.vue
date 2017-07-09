@@ -3,7 +3,7 @@
     <div class="content">
       <div class="team">
         <div>
-          <img :src="game.teams[0].logo" alt="">
+          <img :src="game.teams[0].logo?game.teams[0].logo:'https://lolstatic-a.akamaihd.net/frontpage/apps/prod/lolesports_feapp/en_US/24bd902e88e2d2990b1d4cc6966cf804521797cb/assets/img/tbd.png'" alt="">
           <p v-text="game.teams[0].name ? game.teams[0].name:'待定'">SKTelecom T1</p>
         </div>
       </div>
@@ -16,7 +16,7 @@
       </div>
       <div class="team">
         <div>
-          <img :src="game.teams[1].logo" alt="">
+          <img :src="game.teams[1].logo?game.teams[1].logo:'https://lolstatic-a.akamaihd.net/frontpage/apps/prod/lolesports_feapp/en_US/24bd902e88e2d2990b1d4cc6966cf804521797cb/assets/img/tbd.png'" alt="">
           <p v-text="game.teams[1].name ? game.teams[1].name:'待定'">SKTelecom T1</p>
         </div>
       </div>
