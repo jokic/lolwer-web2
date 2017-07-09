@@ -23,7 +23,7 @@ Vue.filter('time',function (val) {
 	var time = val;
 	time = time.replace("-\g"," ");
 	time = time.replace("T"," ");
-	time = time.substring(0,19);
+	time = time.substring(0,19) +" "+ time.substring(23)
 	var date = new Date(time);
     var m = date.getMonth() + 1;
     var d = date.getDate();

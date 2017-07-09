@@ -29,7 +29,8 @@ export default {
  					match : res.scheduleItems[i].match,
  					tournament : res.scheduleItems[i].tournament,
  					bracket : res.scheduleItems[i].bracket,
- 					scheduledTime : Date.parse(new Date(res.scheduleItems[i].scheduledTime))
+ 					scheduledTime: res.scheduleItems[i].scheduledTime,
+ 					time : Date.parse(new Date(res.scheduleItems[i].scheduledTime))
  					}
  				tsDate.push(match);
  			}
@@ -96,7 +97,7 @@ export default {
  			}
  			//按时间排序
  			tsDate.sort(function (a,b) {
- 				return a.scheduledTime - b.scheduledTime
+ 				return a.time - b.time
  			})
  			this.schedule= tsDate;
  			this.getting =false;
