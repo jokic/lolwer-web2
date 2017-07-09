@@ -18,5 +18,6 @@
     color:$mc;
     font-size: 1.6rem;
     font-weight: 600;
+    transition:all .5s linear;
   }
 </style>

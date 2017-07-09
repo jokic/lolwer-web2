@@ -47,6 +47,7 @@ export default {
     font-size: 0.6rem;
     font-weight: 600;
     display:flex; 
+    transition:all .5s linear;
     .menu-btn{
       flex:1;
       a{

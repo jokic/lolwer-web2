@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div class="head-top">     
-      <head-top></head-top>
+      <head-top v-bind:class="{hide:menuHide}"></head-top>
     </div>
     <router-view></router-view>
-    <menu-bot></menu-bot>
+    <menu-bot v-bind:class="{hide:menuHide}"></menu-bot>
   </div>
 </template>
 
@@ -13,11 +13,28 @@ import headTop from './components/header/header'
 import menuBot from './components/menu/menu'
 export default {
   data(){
-    return{}
+    return{
+      menuHide:false,
+      oldOST:0
+    }
+  },
+  methods:{
+    scroll:function (e) {
+      var newOST = e.srcElement.scrollingElement.scrollTop;
+      if (newOST>this.oldOST) {
+        this.menuHide = true;
+      }else{
+        this.menuHide = false;
+      }
+      this.oldOST = newOST;
+    }
   },
  components:{
   headTop,
   menuBot
+ },
+ mounted(){
+  window.addEventListener('scroll', this.scroll)
  }
 }
 </script>

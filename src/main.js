@@ -21,7 +21,7 @@ new Vue({
 })
 Vue.filter('time',function (val) {
 	var time = val;
-	time = time.replace("-\g"," ");
+	time = time.replace(/-/g,"/");
 	time = time.replace("T"," ");
 	time = time.substring(0,19) +" "+ time.substring(23)
 	var date = new Date(time);
