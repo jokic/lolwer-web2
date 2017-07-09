@@ -4,6 +4,7 @@
 	  	<router-link to="/match/all">RIFT</router-link>
 	  	<router-link to="/match/lpl">LPL</router-link>
 	  	<router-link to="/match/lck">LCK</router-link>
+	  	<router-link to="/match/nalcs">NALCS</router-link>
   	</div>
   	<router-view></router-view>
   </div>

@@ -1,13 +1,35 @@
 <template>
   <div class="menu">
-    <router-link to="/video" class="menu-btn">视频</router-link>
-    <router-link to="/match" class="menu-btn active">比赛</router-link>
-    <router-link to="/user" class="menu-btn">个人</router-link>
+    <div class="menu-btn" v-bind:class='{active:video}' @click="checkedActive('video')">
+      <router-link to="/video">视频</router-link>
+    </div>
+    <div class="menu-btn" v-bind:class='{active:match}' @click="checkedActive('match')">
+      <router-link to="/match">比赛</router-link>
+    </div>
+    <div class="menu-btn" v-bind:class='{active:user}' @click="checkedActive('user')">
+      <router-link to="/user">个人</router-link>
+    </div>
   </div>
 </template>
 
 <script>
-
+export default {
+  data(){
+    return {
+      video:false,
+      match:true,
+      user:false
+    }
+  },
+  methods:{
+    checkedActive:function (n) {
+      this.video=false;
+      this.match=false;
+      this.user=false;
+      this[n] = true;
+    }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -27,9 +49,18 @@
     display:flex; 
     .menu-btn{
       flex:1;
-      text-decoration: none;
+      a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: $mc;
+      }
     }
     .menu-btn.active{
+      a{
+        color: #000;
+      }
       background-color: $mc;
       color:#000;
     }

@@ -6,6 +6,7 @@ import Video from '@/page/video/video'
 import All from '@/page/match/children/all'
 import LPL from '@/page/match/children/lpl'
 import LCK from '@/page/match/children/lck'
+import NALCS from '@/page/match/children/nalcs'
 
 Vue.use(Router)
 
@@ -30,6 +31,9 @@ export default new Router({
       },{
         path:'lck',
         component:LCK
+      },{
+        path:'nalcs',
+        component:NALCS
       }]
     },
     {

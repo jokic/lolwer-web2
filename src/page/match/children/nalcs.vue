@@ -20,11 +20,11 @@ export default {
  },	
  methods:{
  	update:function () {
- 		this.$http.get('http://api.lolesports.com/api/v1/scheduleItems?leagueId=6').then(data=>{
+ 		this.$http.get('http://api.lolesports.com/api/v1/scheduleItems?leagueId=2').then(data=>{
  			let res = data.body;
  			let tsDate = [];
  			for (var i = 0; i < res.scheduleItems.length; i++) {
- 				if (res.scheduleItems[i].tournament != '6e66df3c-1c99-46af-8903-51c562ca2a08') {
+ 				if (res.scheduleItems[i].tournament != '9c67f1fe-34d8-445b-a93f-d93e0ecd0056') {
  					continue
  				}
  				//获取每场match的信息
@@ -92,7 +92,7 @@ export default {
  						tsDate[i].game = game;
  						tsDate[i].closed = closed;
  						tsDate[i].teams = teams;
- 						tsDate[i].type="韩国LCK联赛";
+ 						tsDate[i].type="北美LCS联赛";
  						break
  					}
  				}

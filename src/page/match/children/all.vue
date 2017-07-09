@@ -4,7 +4,7 @@
   		正在加载...
   	</div>
   	<div v-else>	
-  		<game v-for='macth in schedule' v-bind:game='macth'></game>	
+  		<game v-for='macth in schedule' v-bind:game='macth' :key='macth.scheduledTime'></game>	
   	</div>		
   </div>
 </template>

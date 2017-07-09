@@ -20,25 +20,29 @@ new Vue({
   components: { App }
 })
 Vue.filter('time',function (val) {
-	var date = new Date(val);
-        var m = date.getMonth() + 1;
-        var d = date.getDate();
-        var H = date.getHours();
-        var i = date.getMinutes();
-        var s = date.getSeconds();
-        if (d < 10) {
-            d = '0' + d;
-        }
-        if (H < 10) {
-            H = '0' + H;
-        }
-        if (i < 10) {
-            i = '0' + i;
-        }
-        if (s < 10) {
-            s = '0' + s;
-        }
-        var t = m + '月' + d + '日 ' + H + ':' + i;
-        return t;
+	var time = val;
+	time = time.replace("-\g"," ");
+	time = time.replace("T"," ");
+	time = time.substring(0,19);
+	var date = new Date(time);
+    var m = date.getMonth() + 1;
+    var d = date.getDate();
+    var H = date.getHours();
+    var i = date.getMinutes();
+    var s = date.getSeconds();
+    if (d < 10) {
+        d = '0' + d;
+    }
+    if (H < 10) {
+        H = '0' + H;
+    }
+    if (i < 10) {
+        i = '0' + i;
+    }
+    if (s < 10) {
+        s = '0' + s;
+    }
+    var t = m + '月' + d + '日 ' + H + ':' + i;
+    return t;
 })
 var myFilter = Vue.filter('time')
